@@ -21,8 +21,8 @@ pipeline{
         stage('Install dependencies'){
             steps{
                 sh '''
-                    mkdir -p $WORKSPACE/.npm
-                    export npm_config_cache=$WORKSPACE/.npm
+                    mkdir -p "\$WORKSPACE/.npm"
+                    export npm_config_cache="\$WORKSPACE/.npm"
                     npm ci --only=production
                 '''
             }
