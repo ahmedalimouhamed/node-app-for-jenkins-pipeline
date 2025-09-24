@@ -5,8 +5,9 @@ module.exports = {
         jest: true
     },
 
-    extends: ['eslint: recommended'],
-    parseOptions: {
+    extends: ['eslint:recommended'], // sans espace
+
+    parserOptions: {                // corrigé de parseOptions → parserOptions
         ecmaVersion: 12,
         sourceType: 'module'
     },
@@ -16,4 +17,4 @@ module.exports = {
         'no-unused-vars' : 'error',
         'prefer-const': 'error'
     }
-}
+};
