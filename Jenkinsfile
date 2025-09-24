@@ -20,7 +20,12 @@ pipeline{
 
         stage('Install dependencies'){
             steps{
-                sh 'npm ci --only=production'
+                sh '''
+                    mkdir -p /home/jenkins/.npm
+                    chown -R $(id -u):$(id -g) /home/jenkins/.npm
+                    export npm_config_cache=/home/jenkins/.npm
+                    npm ci --only=production
+                '''
             }
         }
 
